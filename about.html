@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us – Zulaiy Technologies</title>
+<meta name="description" content="Zulaiy Technologies builds AI, software, and data infrastructure that lets retailers, SMBs, and growing enterprises compete on intelligence — not just effort.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0f0e0c;
+    --ink-soft: #4a4845;
+    --ink-muted: #8a8782;
+    --bg: #faf9f6;
+    --surface: #f2f0eb;
+    --border: rgba(15,14,12,0.1);
+    --accent: #1a4d3e;
+    --accent-warm: #c9521a;
+    --accent-light: #e8f3ef;
+    --white: #ffffff;
+    --font-display: 'DM Serif Display', serif;
+    --font-body: 'Sora', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    background: var(--accent);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #123829; }
+
+  /* HERO */
+  .hero {
+    padding: 5rem 2.5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  h1.hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+  }
+  h1.hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 600px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.02em;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #123829; transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+  .btn-ghost::after { content: '→'; transition: transform 0.2s; }
+  .btn-ghost:hover { color: var(--ink); }
+  .btn-ghost:hover::after { transform: translateX(3px); }
+
+  /* DIVIDER */
+  .divider {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    padding: 2rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    white-space: nowrap;
+  }
+  .trust-items {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .trust-item {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .trust-item span { color: var(--accent); }
+
+  /* PROBLEM */
+  .problem {
+    background: var(--ink);
+    color: var(--white);
+    padding: 4.5rem 2.5rem;
+    margin: 3rem 0;
+  }
+  .problem-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    opacity: 0.5;
+  }
+  h2.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin-bottom: 1.5rem;
+  }
+  h2.section-title em { font-style: italic; color: #7ecfb0; }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .problem-card {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .problem-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+  .problem-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #f0ede8;
+  }
+  .problem-card p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* WHAT WE DO */
+  .what-we-do {
+    padding: 5rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .what-we-do .section-label { color: var(--ink-muted); }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+  .big-stat {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -3px;
+    margin-bottom: 0.5rem;
+  }
+  .stat-note {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+  }
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .service-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .service-list li:last-child { border-bottom: none; }
+  .service-list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* WHY US */
+  .why-us {
+    background: var(--surface);
+    padding: 5rem 2.5rem;
+  }
+  .why-inner { max-width: 900px; margin: 0 auto; }
+  .why-inner .section-label { color: var(--ink-muted); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .why-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+  }
+  .why-card .num {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--accent);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .why-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .why-card p {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  /* PROCESS */
+  .process {
+    padding: 5rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .process .section-label { color: var(--ink-muted); }
+  .steps {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--accent);
+    line-height: 1;
+    padding-top: 2px;
+    opacity: 0.4;
+    font-style: italic;
+  }
+  .step h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .step p {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* TEAM */
+  .team-section {
+    background: var(--ink);
+    padding: 5rem 2.5rem;
+  }
+  .team-inner { max-width: 900px; margin: 0 auto; }
+  .team-inner .section-label { color: rgba(255,255,255,0.4); }
+  .team-inner h2 { color: var(--white); }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #7ecfb0;
+    letter-spacing: 0.03em;
+  }
+  .team-card .name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #f0ede8;
+    margin-bottom: 0.25rem;
+  }
+  .team-card .role {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 6rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .cta-badge {
+    display: inline-block;
+    background: var(--accent-warm);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .cta-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-section h2 em { font-style: italic; color: var(--accent); }
+  .cta-section > p {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-outline {
+    border: 1.5px solid var(--border);
+    color: var(--ink-soft);
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--ink); color: var(--ink); }
+  .reassurance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .reassurance span {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .reassurance span::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.75rem;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--accent);
+  }
+  footer .foot-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  footer .foot-links a {
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer .foot-links a:hover { color: var(--ink); }
+  footer .copy { font-size: 0.75rem; color: var(--ink-muted); }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links li:not(:last-child) { display: none; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .trust-bar { padding: 1.5rem 1.25rem; }
+    .divider { padding: 0 1.25rem; }
+    .problem { padding: 3rem 1.25rem; }
+    .what-we-do { padding: 3rem 1.25rem; }
+    .two-col { grid-template-columns: 1fr; gap: 2rem; }
+    .why-us { padding: 3rem 1.25rem; }
+    .process { padding: 3rem 1.25rem; }
+    .team-section { padding: 3rem 1.25rem; }
+    .cta-section { padding: 3.5rem 1.25rem; }
+    footer { padding: 1.5rem 1.25rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Zulaiy</a>
+  <ul class="nav-links">
+    <li><a href="/services">Services</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact" class="nav-cta">Book a Call →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">AI & Digital Transformation</div>
+  <h1 class="hero-headline">We help ambitious businesses stop <em>winging it</em> and start running on real systems.</h1>
+  <p class="hero-sub">Zulaiy Technologies builds the AI, software, and data infrastructure that lets retailers, SMBs, and growing enterprises compete on intelligence — not just effort.</p>
+  <div class="hero-actions">
+    <a href="/contact" class="btn-primary">Book a Free Discovery Call</a>
+    <a href="/case-studies" class="btn-ghost">See what we've built</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-label">What we deliver</span>
+  <div class="trust-items">
+    <span class="trust-item"><span>✦</span> AI Strategy & Roadmaps</span>
+    <span class="trust-item"><span>✦</span> Custom Software & POS</span>
+    <span class="trust-item"><span>✦</span> Data & Business Intelligence</span>
+    <span class="trust-item"><span>✦</span> ERP & Automation</span>
+    <span class="trust-item"><span>✦</span> Ecommerce Build-outs</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="problem-inner">
+    <p class="section-label">Why most businesses are stuck</p>
+    <h2 class="section-title">You've tried the tools. The real problem is you have <em>no system.</em></h2>
+    <p style="color:rgba(255,255,255,0.6); max-width:580px; font-size:0.95rem; line-height:1.75;">
+      Most growing businesses don't lack ambition. They lack the operational infrastructure to scale without chaos. We fix that.
+    </p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <span class="icon">📊</span>
+        <h3>Data lives in spreadsheets and chat apps</h3>
+        <p>You can't make fast decisions when your numbers are scattered and two days old.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🔄</span>
+        <h3>Manual work eating your margins</h3>
+        <p>Tasks that should take seconds take hours because nothing talks to anything else.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🤷</span>
+        <h3>"AI" feels confusing and expensive</h3>
+        <p>Every consultant says adopt AI. Nobody shows you exactly what that means for your business.</p>
+      </div>
+      <div class="problem-card">
+        <span class="icon">🚧</span>
+        <h3>Software built for someone else</h3>
+        <p>Off-the-shelf tools don't fit your workflows, team size, or how you actually operate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="what-we-do">
+  <p class="section-label">What we actually do</p>
+  <h2 class="section-title" style="max-width:560px; margin-bottom:0.5rem;">We diagnose, build, and <em>implement</em> — not just advise.</h2>
+  <div class="two-col">
+    <div>
+      <div class="big-stat">6+</div>
+      <p class="stat-note">Years building operational systems for growing businesses</p>
+      <p style="font-size:0.9rem; color:var(--ink-soft); line-height:1.8; max-width:360px;">
+        We're not a generic tech agency that'll hand you a 60-page deck. We sit inside your operations, understand what's broken, then build the systems and software that fix it — with your team trained to run it independently.
+      </p>
+    </div>
+    <div>
+      <ul class="service-list">
+        <li>AI Readiness Assessment & Strategy</li>
+        <li>Custom Software, Dashboards & POS Systems</li>
+        <li>Data Analytics & Business Intelligence</li>
+        <li>ERP Implementation & Systems Integration</li>
+        <li>E-commerce Design & Development</li>
+        <li>Digital Transformation Roadmapping</li>
+        <li>Process Automation & Workflow Design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+  <div class="why-inner">
+    <p class="section-label">Why Zulaiy</p>
+    <h2 class="section-title" style="color:var(--ink); max-width:600px;">We're the team that builds the thing, not just the plan.</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">01</div>
+        <h3>Operations-first thinking</h3>
+        <p>We understand how businesses actually run — constraints, workflows, and team realities — before writing a single line of code.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <h3>End-to-end delivery</h3>
+        <p>Strategy through to deployment. We don't disappear after the slides. We're accountable for results that work in production.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <h3>No hype, just outcomes</h3>
+        <p>We'll tell you exactly what AI can and can't do for your business right now — even if that means a smaller project scope.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">04</div>
+        <h3>You own everything</h3>
+        <p>All code, data, and IP is yours. No vendor lock-in. We build systems you can operate, extend, and hand off.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <p class="section-label">How we work</p>
+  <h2 class="section-title" style="max-width:520px; margin-bottom:0.5rem;">From first call to <em>working system</em> — here's what to expect.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Discovery Call (Free, 45 min)</h3>
+        <p>We listen more than we talk. You walk us through your operations, pain points, and goals. We ask sharp questions. No selling, just diagnosis.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Scoping & Proposal</h3>
+        <p>We send a clear, plain-English proposal — what we'll build, what it'll cost, how long it'll take. No surprises, no bloated retainers.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Build & Iterate</h3>
+        <p>We work in short sprints with regular demos. You see progress every two weeks. Feedback loops are fast — we adapt as your needs evolve.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <h3>Handover & Ongoing Support</h3>
+        <p>We train your team, document everything, and stay available for questions. Most clients retain us for ongoing improvements — but you're never locked in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="team-inner">
+    <p class="section-label">The team</p>
+    <h2 class="section-title">Sharp people who actually <em>build</em> things.</h2>
+    <p style="color:rgba(255,255,255,0.55); font-size:0.9rem; max-width:520px; margin-top:0.75rem; line-height:1.75;">
+      We're a tight-knit crew of developers, designers, and strategists. Fast-moving and obsessed with craft.
+    </p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar">BA</div>
+        <div class="name">Bello Abdussamad</div>
+        <div class="role">CEO & Senior Software Developer</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar">BL</div>
+        <div class="name">Bello-Ahmed Lateefat</div>
+        <div class="role">Project Manager & Web Designer</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar">AA</div>
+        <div class="name">Ahmed Alege</div>
+        <div class="role">Junior Developer</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar">AB</div>
+        <div class="name">Abdulkadir Aliagan</div>
+        <div class="role">Creative Director</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar">MA</div>
+        <div class="name">AbdulMuiz Adebowale</div>
+        <div class="role">Business Development</div>
+      </div>
+      <div class="team-card">
+        <div class="avatar">KS</div>
+        <div class="name">Khadija Salau</div>
+        <div class="role">Business Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-badge">Ready to start?</div>
+  <h2>If your business is growing, your systems should be <em>keeping up.</em></h2>
+  <p>Book a free 45-minute call. We'll tell you exactly what you need — and what you don't. No pitch deck. No fluff.</p>
+  <div class="cta-group">
+    <a href="/contact" class="btn-primary">Book a Free Discovery Call</a>
+    <a href="/services" class="btn-outline">Browse our services</a>
+  </div>
+  <div class="reassurance">
+    <span>No commitment required</span>
+    <span>Response within 24 hours</span>
+    <span>Plain-language proposal</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Zulaiy Technologies</div>
+  <ul class="foot-links">
+    <li><a href="/services">Services</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="copy">© 2025–26 Zulaiy Technologies</div>
+</footer>
+
+</body>
+</html>
